@@ -1,0 +1,33 @@
+ion-content ion-toolbar {
+    --background: translucent;
+  }
+  
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.padder {
+    /* margin: 100px 0; */
+}
+
+.logo-img{
+    height: 200px;
+}
+
+.login-button{
+    margin-top: 20px;
+    width: 80%;
+    height: 50px;
+}
+
+.text-input {
+    text-align: center;
+  }
+
+/* .wrapper ion-button{
+    align-self: center;
+}
+ */
