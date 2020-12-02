@@ -2,18 +2,13 @@ import React from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import {
   IonApp,
-  IonIcon,
-  IonLabel,
-  IonRouterOutlet,
-  IonTabBar,
-  IonTabButton,
-  IonTabs
+  IonRouterOutlet
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { square, home, images } from 'ionicons/icons';
+// import { square, home, images } from 'ionicons/icons';
 import Menu from './pages/Menu';
-import Tab2 from './pages/Scan';
-import Tab3 from './pages/Tab3';
+import Scan from './pages/Scan';
+import Manual from './pages/Manual';
 import Home from './pages/Home';
 import Details from './pages/Details';
 
@@ -46,9 +41,9 @@ const App: React.FC = () => (
         <IonRouterOutlet>
           <Route path="/home" component={Home} exact={true} />
           <Route path="/menu" component={Menu} exact={true} />
-          <Route path="/scan" component={Tab2} exact={true} />
-          <Route path="/tab2/details" component={Details} />
-          <Route path="/tab3" component={Tab3} />
+          <Route path="/scan" component={Scan} exact={true} />
+          {/* <Route path="/tab2/details" component={Details} /> */}
+          <Route path="/manual" component={Manual} />
           <Route path="/" render={() => <Redirect to="/home" />} exact={true} />
         </IonRouterOutlet>
         {/* <IonTabBar slot="bottom">

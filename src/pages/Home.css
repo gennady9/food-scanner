@@ -1,31 +1,39 @@
 ion-content ion-toolbar {
-    --background: translucent;
-  }
-  
+  --background: translucent;
+}
+
+ion-input {
+  border: solid 1px grey;
+}
+
+ion-list {
+  border: solid 1px grey;
+}
+
 .wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .padder {
-    /* margin: 100px 0; */
+  /* margin: 100px 0; */
 }
 
-.logo-img{
-    height: 200px;
+.logo-img {
+  height: 200px;
 }
 
-.login-button{
-    margin-top: 20px;
-    width: 80%;
-    height: 50px;
+.login-button {
+  margin-top: 20px;
+  width: 80%;
+  height: 50px;
 }
 
 .text-input {
-    text-align: center;
-  }
+  text-align: center;
+}
 
 /* .wrapper ion-button{
     align-self: center;

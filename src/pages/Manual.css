@@ -1,12 +1,13 @@
-.scan-wrapper{
+.manual-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
+  margin-top: 30px;
 }
 
-.phone-img{
-  margin: 30px;
+.barcode-img{
+  margin: 40px;
   height: 60%;
 }
