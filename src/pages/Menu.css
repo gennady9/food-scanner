@@ -10,16 +10,17 @@ ion-content ion-toolbar {
 }
 
 .padder {
-  margin: 100px 0;
+  margin: 30% 0;
 }
 
 .scan-button {
   margin: 50px;
-  width: 300px;
+  width: 70%;
   height: 50px;
 }
 
-/* ion-button{
-  margin-top: 50px;
-  /* width: 80%; */
+.list-styling{
+  margin-top: 20px;
+  width: 70%;
+}
   

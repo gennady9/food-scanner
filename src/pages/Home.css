@@ -10,15 +10,15 @@ ion-list {
   border: solid 1px grey;
 }
 
+ion-title {
+  font-weight: bold;
+}
+
 .wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-}
-
-.padder {
-  /* margin: 100px 0; */
 }
 
 .logo-img {

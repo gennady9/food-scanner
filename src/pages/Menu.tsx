@@ -2,13 +2,11 @@ import React from "react";
 import {
   IonButton,
   IonContent,
-  IonHeader,
   IonItem,
   IonLabel,
   IonList,
   IonPage,
   IonTitle,
-  IonToolbar,
 } from "@ionic/react";
 import "./Menu.css";
 
@@ -30,7 +28,7 @@ const Menu: React.FC = () => {
             SCAN
           </IonButton>
           <IonTitle>Last product scans:</IonTitle>
-          <IonList>
+          <IonList className="list-styling">
             <IonItem>
               <IonLabel>Pringles</IonLabel>
             </IonItem>
