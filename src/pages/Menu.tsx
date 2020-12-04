@@ -5,6 +5,7 @@ import {
   IonItem,
   IonLabel,
   IonList,
+  IonListHeader,
   IonPage,
   IonTitle,
 } from "@ionic/react";
@@ -27,8 +28,10 @@ const Menu: React.FC = () => {
           >
             SCAN
           </IonButton>
-          <IonTitle>Last product scans:</IonTitle>
           <IonList className="list-styling">
+          <IonListHeader>
+          <IonTitle>Last product scans</IonTitle>
+          </IonListHeader>
             <IonItem>
               <IonLabel>Pringles</IonLabel>
             </IonItem>

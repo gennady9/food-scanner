@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.demo.pg.react",
-  "appName": "React Photo Gallery",
+  "appId": "gennady9.food.scanner",
+  "appName": "Food scanner",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
