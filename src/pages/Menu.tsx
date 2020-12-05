@@ -1,24 +1,31 @@
 import React from "react";
 import {
+  IonBackButton,
   IonButton,
+  IonButtons,
   IonContent,
+  IonHeader,
   IonItem,
   IonLabel,
   IonList,
   IonListHeader,
   IonPage,
   IonTitle,
+  IonToolbar,
 } from "@ionic/react";
 import "./Menu.css";
+import { Plugins, Capacitor } from "@capacitor/core";
 
 const Menu: React.FC = () => {
   return (
     <IonPage>
-      {/* <IonHeader>
+      <IonHeader>
         <IonToolbar>
-          <IonTitle>Welcome [Vendor Name]</IonTitle>
+          <IonButtons slot="start">
+            <IonBackButton defaultHref="/" />
+          </IonButtons>
         </IonToolbar>
-      </IonHeader> */}
+      </IonHeader>
       <IonContent>
         <div className="wrapper padder">
           <IonTitle>Welcome Scanner!</IonTitle>
@@ -50,5 +57,11 @@ const Menu: React.FC = () => {
     </IonPage>
   );
 };
+
+// document.addEventListener('ionBackButton', (ev : any) => {
+//   ev.detail.register(10, () => {
+//     Plugins.App.exitApp();
+//   });
+// });
 
 export default Menu;

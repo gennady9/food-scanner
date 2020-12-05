@@ -22,7 +22,7 @@ const Manual: React.FC = () => {
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton />
+            <IonBackButton defaultHref="/scan"/>
           </IonButtons>
         </IonToolbar>
       </IonHeader>

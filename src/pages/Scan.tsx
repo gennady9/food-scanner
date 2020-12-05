@@ -14,44 +14,37 @@ import {
   IonButton,
 } from "@ionic/react";
 import { camera } from "ionicons/icons";
-import { usePhotoGallery, Photo } from "../hooks/usePhotoGallery";
+import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import "./Scan.css";
 
-const Scan: React.FC = () => {
-  const { deletePhoto, photos, takePhoto } = usePhotoGallery();
-  const [photoToDelete, setPhotoToDelete] = useState<Photo>();
+const Scan: React.FC = (props: any) => {
+
+  const openScanner = async () => {
+    const data = await BarcodeScanner.scan();
+    if(data.text){
+      props.history.push(`/fetch/${data.text}`);
+    }
+  };
 
   return (
     <IonPage>
       <IonHeader>
         <IonToolbar>
           <IonButtons slot="start">
-            <IonBackButton />
+            <IonBackButton defaultHref="/menu"/>
           </IonButtons>
         </IonToolbar>
       </IonHeader>
       <IonContent>
-        {/* <IonGrid>
-          <IonRow>
-            {photos.map((photo, index) => (
-              <IonCol size="6" key={index}>
-                <IonImg
-                  onClick={() => setPhotoToDelete(photo)}
-                  src={photo.webviewPath}
-                />
-              </IonCol>
-            ))}
-          </IonRow>
-        </IonGrid> */}
         <IonTitle className="ion-text-center ion-margin-top">Scan a Barcode</IonTitle>
-        <IonImg className="phone-img" src="assets/phone.png" onClick={() => takePhoto()}/>
+        <IonImg className="phone-img" src="assets/phone.png" onClick={openScanner}/>
 
         <div className="scan-wrapper">
           <IonButton className="ion-text-center" color="light" routerLink="/manual"> type barcode manually</IonButton>
         </div>
         
         <IonFab vertical="center" horizontal="center" slot="fixed">
-          <IonFabButton color="light" onClick={() => takePhoto()}>
+          <IonFabButton color="light" onClick={openScanner}>
             <IonIcon icon={camera}></IonIcon>
           </IonFabButton>
         </IonFab>

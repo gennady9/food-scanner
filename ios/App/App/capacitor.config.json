@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "photo-gallery-capacitor-react",
+  "appId": "gennady9.food.scanner",
+  "appName": "Food scanner",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "build",
