@@ -12,7 +12,7 @@
 /build
 
 # api hide
-/src/api-hidden
+/src/api-hidden.tsx
 
 # misc
 .DS_Store
