@@ -34,7 +34,7 @@ import "./theme/variables.css";
 import "./global.css";
 import { useLocalStorage } from './useLocalStorage';
 
-// localStorage.clear();
+localStorage.clear(); // TODO: remove before deploy
 
 const initialState = {
   last_scanned: [12,34,56,78]
