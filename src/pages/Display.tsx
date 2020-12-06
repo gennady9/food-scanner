@@ -16,7 +16,7 @@ import {
   IonIcon,
 } from "@ionic/react";
 import "./Display.css";
-import { alertCircleOutline, arrowBackCircleOutline, scanCircleOutline } from "ionicons/icons";
+import { alertCircleOutline, arrowBackCircleOutline, barcodeOutline } from "ionicons/icons";
 
 const Display: React.FC = (props : any) => {
   const tempImage = "https://via.placeholder.com/200x150?text=Image+Not+Found";
@@ -53,8 +53,8 @@ const Display: React.FC = (props : any) => {
             </IonItem>
           </IonList>
           <IonButton className="display-button ion-margin-top" routerLink="/scan">
-          <IonIcon slot="start" icon={scanCircleOutline} />
-          Scan another Barcode
+          <IonIcon slot="start" icon={barcodeOutline} />
+          Scan another barcode
           </IonButton>
           <IonButton className="display-button" routerLink={`/report/${barcodeNumber}`}>
           <IonIcon slot="start" icon={alertCircleOutline} />

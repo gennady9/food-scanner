@@ -16,7 +16,7 @@ import {
   IonAlert,
 } from "@ionic/react";
 import "./Report.css";
-import { cameraOutline } from "ionicons/icons";
+import { cameraOutline, cloudUploadOutline } from "ionicons/icons";
 
 const Report: React.FC = (props: any) => {
   const [text, setText] = useState<string>();
@@ -73,7 +73,8 @@ const Report: React.FC = (props: any) => {
             Picture label
           </IonButton>
           <IonButton className="report-button" onClick={handleSubmit}>
-            Send to better life food
+          <IonIcon slot="start" icon={cloudUploadOutline} />
+            Send to company
           </IonButton>
         </div>
       </IonContent>

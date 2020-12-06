@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   IonBackButton,
   IonButton,
@@ -15,7 +15,11 @@ import {
 import "./Manual.css";
 
 const Manual: React.FC = () => {
-  const [barcodeNum, setBarcodeNum] = useState<number>();
+  const [barcodeNum, setBarcodeNum] = useState<string>('');
+
+  useEffect(() => {
+    setBarcodeNum('');
+  }, []);
 
   return (
     <IonPage>
@@ -36,10 +40,10 @@ const Manual: React.FC = () => {
               type="number"
               value={barcodeNum}
               placeholder="Enter barcode"
-              onIonChange={(e) => setBarcodeNum(parseInt(e.detail.value!, 10))}
+              onIonChange={(e) => setBarcodeNum(e.detail.value!)}
             ></IonInput>
           </IonItem>
-          <IonButton type="submit" routerLink={`/fetch/${barcodeNum}`}>Submit</IonButton>
+          <IonButton type="submit" routerLink={`/fetch/${parseInt(barcodeNum, 10)}`}>Submit</IonButton>
         </div>
       </IonContent>
     </IonPage>

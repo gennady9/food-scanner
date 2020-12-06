@@ -1,0 +1,33 @@
+ion-content ion-toolbar {
+    --background: translucent;
+  }
+  
+  .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .padder {
+    margin: 10% 0;
+  }
+  
+  .scan-button {
+    margin: 50px 0 100px 0;
+    width: 70%;
+    height: 50px;
+  }
+  
+  .menu-button {
+    margin-top: 10px;
+    width: 70%;
+    height: 50px;
+  }
+  
+  .list-styling{
+    margin-top: 20px;
+    width: 70%;
+  }
+    
+  

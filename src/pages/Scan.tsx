@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   IonContent,
   IonHeader,
@@ -40,7 +40,7 @@ const Scan: React.FC = (props: any) => {
         <IonImg className="phone-img" src="assets/phone.png" onClick={openScanner}/>
 
         <div className="scan-wrapper">
-          <IonButton className="ion-text-center" color="light" routerLink="/manual"> type barcode manually</IonButton>
+          <IonButton className="ion-text-center" color="light" routerLink="/manual"> Type barcode manually</IonButton>
         </div>
         
         <IonFab vertical="center" horizontal="center" slot="fixed">
