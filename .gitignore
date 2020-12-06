@@ -11,6 +11,9 @@
 # production
 /build
 
+# api hide
+/src/api-hidden
+
 # misc
 .DS_Store
 .env.local
