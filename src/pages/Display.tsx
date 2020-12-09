@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   IonBackButton,
   IonButtons,
@@ -17,14 +17,14 @@ import {
 } from "@ionic/react";
 import "./Display.css";
 import { alertCircleOutline, arrowBackCircleOutline, barcodeOutline } from "ionicons/icons";
+import { AppContext } from "../App";
 
 const Display: React.FC = (props : any) => {
-  // const tempImage = "https://via.placeholder.com/200x150?text=Image+Not+Found";
-  const tempImage = "assets/placeholder.png";
-
-  const imgPlaceholder =
-    "https://via.placeholder.com/200x150?text=Image+Not+Found";
-  //console.log(props.match.params.id);
+  const { state, dispatch } = useContext(AppContext);
+  let { name, category, ingredients, allergenOverview, productCodes } = state.productDetails;
+  console.log(productCodes);
+  let barcodeType = productCodes[0].type;
+  const tempImage = ''; //"assets/placeholder.png";
   const barcodeNumber = props.match.params.id;
 
   return (
@@ -38,12 +38,13 @@ const Display: React.FC = (props : any) => {
       </IonHeader>
       <IonContent>
         <div className="display-wrapper">
-          <IonTitle>Product name</IonTitle>
-          <IonImg
+        <IonTitle>Category: {category}</IonTitle>
+          <IonTitle>{name}</IonTitle>
+          { tempImage? <IonImg
             className="product-img"
-            src={tempImage ? tempImage : imgPlaceholder}
-          />
-          <IonText>Barcode type: ----</IonText>
+            src={tempImage}
+          /> : null}
+          <IonText className="ion-margin-top">Barcode type:{barcodeType ? barcodeType : "----"}</IonText>
           <IonText>Barcode: {barcodeNumber ? barcodeNumber : "----"}</IonText>
           <IonTitle className="ion-margin-top">Ingredients</IonTitle>
           <IonList>
@@ -60,7 +61,7 @@ const Display: React.FC = (props : any) => {
           </IonButton>
           <IonButton className="display-button" routerLink={`/report/${barcodeNumber}`}>
           <IonIcon slot="start" icon={alertCircleOutline} />
-            Contact us
+            Suggest a fix
           </IonButton>
           <IonButton className="display-button" routerLink="/menu">
           <IonIcon slot="start" icon={arrowBackCircleOutline} />

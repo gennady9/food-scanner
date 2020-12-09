@@ -10,16 +10,31 @@ import {
   IonItem,
   IonPage,
   IonTitle,
+  IonToast,
   IonToolbar,
 } from "@ionic/react";
 import "./Manual.css";
 
-const Manual: React.FC = () => {
+const Manual: React.FC = (props: any) => {
   const [barcodeNum, setBarcodeNum] = useState<string>('');
+  const [showError, setShowError] = useState(false);
 
-  useEffect(() => {
-    setBarcodeNum('');
-  }, []);
+  // useEffect(() => {
+  //   setBarcodeNum('');
+  // }, []);
+
+  
+
+  const handleSubmit = () => {
+    if (barcodeNum) {
+      let targetUrl = `/fetch/${parseInt(barcodeNum, 10)}`;
+      setBarcodeNum('');
+      props.history.replace(targetUrl);
+    } else {
+      setShowError(true);
+    }
+  };
+  // routerLink={`/fetch/${parseInt(barcodeNum, 10)}`}
 
   return (
     <IonPage>
@@ -43,8 +58,15 @@ const Manual: React.FC = () => {
               onIonChange={(e) => setBarcodeNum(e.detail.value!)}
             ></IonInput>
           </IonItem>
-          <IonButton type="submit" routerLink={`/fetch/${parseInt(barcodeNum, 10)}`}>Submit</IonButton>
+          <IonButton type="submit" onClick={handleSubmit}>Submit</IonButton>
         </div>
+        <IonToast
+          isOpen={showError}
+          onDidDismiss={() => setShowError(false)}
+          message="Barcode can't be empty"
+          position="middle"
+          duration={2000}
+        />
       </IonContent>
     </IonPage>
   );

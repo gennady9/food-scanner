@@ -60,15 +60,15 @@ const Report: React.FC = (props: any) => {
               onIonChange={(e) => setText(e.detail.value!)}
             ></IonTextarea>
           </IonItem>
-          <IonButton color="dark" className="picture-button" routerLink="/menu">
+          <IonButton color="dark" className="picture-button">
             <IonIcon slot="start" icon={cameraOutline} />
             Picture front
           </IonButton>
-          <IonButton color="dark" className="picture-button" routerLink="/menu">
+          <IonButton color="dark" className="picture-button">
             <IonIcon slot="start" icon={cameraOutline} />
             Picture back
           </IonButton>
-          <IonButton color="dark" className="picture-button" routerLink="/menu">
+          <IonButton color="dark" className="picture-button">
             <IonIcon slot="start" icon={cameraOutline} />
             Picture label
           </IonButton>

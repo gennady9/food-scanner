@@ -34,11 +34,12 @@ import "./theme/variables.css";
 import "./global.css";
 import { useLocalStorage } from './useLocalStorage';
 
-localStorage.clear(); // TODO: remove before deploy?
+// localStorage.clear(); // TODO: remove before deploy?
 
 const initialState = {
-  last_scanned: [12,34,56,78],
-  vendor_id: '---'
+  last_scanned: [],
+  vendor_id: '---',
+  productDetails: {}
 }
 export const AppContext = React.createContext(initialState as any);
 
@@ -46,8 +47,11 @@ const reducer = (state : any, action : any) => {
   if (action.type === 'setLastScanned') {
     return { ...state, last_scanned: action.last_scanned }
   }
-  if (action.type === 'setVendorId') {
+  else if (action.type === 'setVendorId') {
     return { ...state, vendor_id: action.vendor_id }
+  }
+  else if (action.type === 'setCurrentProduct') {
+    return { ...state, productDetails: action.productDetails }
   }
   return state;
 }

@@ -12,19 +12,18 @@ import {
 } from "@ionic/react";
 import "./Home.css";
 import { AppContext } from "../App";
+import { updateLoginToken } from "../api-hide";
 
 const Tab1: React.FC = (props: any) => {
-  const [vendorId, setVendorID] = useState<string>("");
   const { state, dispatch } = useContext(AppContext);
+  const [vendorId, setVendorID] = useState<string>("");
   const [showError, setShowError] = useState(false);
 
   const handleLogin = () => {
     if (vendorId) {
-      dispatch({
-        type: "setVendorId",
-        vendor_id: vendorId,
-      });
+      dispatch({type: "setVendorId", vendor_id: vendorId});
       props.history.replace("/menu");
+      updateLoginToken(); // api login
     } else {
       setShowError(true);
     }
@@ -50,7 +49,7 @@ const Tab1: React.FC = (props: any) => {
           <IonButton
             className="login-button"
             onClick={handleLogin}
-            expand="round"
+            expand="block"
           >
             SIGN IN
           </IonButton>

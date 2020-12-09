@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   IonContent,
   IonHeader,
@@ -12,18 +12,24 @@ import {
   IonButtons,
   IonBackButton,
   IonButton,
+  IonToast,
 } from "@ionic/react";
 import { camera } from "ionicons/icons";
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import "./Scan.css";
 
 const Scan: React.FC = (props: any) => {
-
+  const [showError, setShowError] = useState(false);
   const openScanner = async () => {
-    const data = await BarcodeScanner.scan();
-    if(data.text){
-      props.history.replace(`/fetch/${data.text}`);
+    try{
+      const data = await BarcodeScanner.scan();
+      if(data.text){
+        props.history.replace(`/fetch/${data.text}`);
+      }
+    } catch(e) {
+      setShowError(true);
     }
+
   };
 
   return (
@@ -48,6 +54,14 @@ const Scan: React.FC = (props: any) => {
             <IonIcon icon={camera}></IonIcon>
           </IonFabButton>
         </IonFab>
+
+        <IonToast
+          isOpen={showError}
+          onDidDismiss={() => setShowError(false)}
+          message="Camera scanning only available in mobile version."
+          position="middle"
+          duration={4000}
+        />
       </IonContent>
     </IonPage>
   );
