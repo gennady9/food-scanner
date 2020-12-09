@@ -30,7 +30,7 @@ const Menu: React.FC = () => {
       <IonContent>
         <div className="wrapper padder">
           <IonTitle>Welcome Scanner!</IonTitle>
-          <IonText>Vendor id ---</IonText>
+          <IonTitle className="ion-margin-top">Vendor: {state.vendor_id}</IonTitle>
           <IonImg className="logo-img ion-margin-top" src="assets/barcode-menu.png" />
           <IonButton
             className="scan-button"
