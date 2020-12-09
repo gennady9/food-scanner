@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   IonContent,
   IonPage,
@@ -9,9 +9,15 @@ import {
   IonInput,
 } from "@ionic/react";
 import "./Home.css";
+import { AppContext } from "../App";
 
-const Tab1: React.FC = () => {
+const Tab1: React.FC = (props: any) => {
   const [vendorID, setVendorID] = useState<string>('');
+  const { state, dispatch } = useContext(AppContext);
+  
+  const handleLogin = () => {
+    props.history.push("/scan");
+  }
 
   return (
     <IonPage>
@@ -30,7 +36,7 @@ const Tab1: React.FC = () => {
               }
             ></IonInput>
           </IonItem>
-          <IonButton className="login-button" routerLink="/menu">
+          <IonButton className="login-button" routerLink="/menu" expand="round">
             SIGN IN
           </IonButton>
         </div>

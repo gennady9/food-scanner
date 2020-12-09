@@ -15,7 +15,6 @@ const FetchData: React.FC = (props: any) => {
   //   }, 2000);
 
   useEffect(() => {
-    console.log("called");
     let updated_last_scanned = state.last_scanned;
     if (state.last_scanned.length >= 8) {
       updated_last_scanned.pop();

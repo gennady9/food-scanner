@@ -22,7 +22,7 @@ const Scan: React.FC = (props: any) => {
   const openScanner = async () => {
     const data = await BarcodeScanner.scan();
     if(data.text){
-      props.history.push(`/fetch/${data.text}`);
+      props.history.replace(`/fetch/${data.text}`);
     }
   };
 

@@ -19,7 +19,9 @@ import "./Display.css";
 import { alertCircleOutline, arrowBackCircleOutline, barcodeOutline } from "ionicons/icons";
 
 const Display: React.FC = (props : any) => {
-  const tempImage = "https://via.placeholder.com/200x150?text=Image+Not+Found";
+  // const tempImage = "https://via.placeholder.com/200x150?text=Image+Not+Found";
+  const tempImage = "assets/placeholder.png";
+
   const imgPlaceholder =
     "https://via.placeholder.com/200x150?text=Image+Not+Found";
   //console.log(props.match.params.id);
@@ -58,7 +60,7 @@ const Display: React.FC = (props : any) => {
           </IonButton>
           <IonButton className="display-button" routerLink={`/report/${barcodeNumber}`}>
           <IonIcon slot="start" icon={alertCircleOutline} />
-            Report error
+            Contact us
           </IonButton>
           <IonButton className="display-button" routerLink="/menu">
           <IonIcon slot="start" icon={arrowBackCircleOutline} />

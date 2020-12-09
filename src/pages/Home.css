@@ -27,7 +27,8 @@ ion-title {
 
 .login-button {
   margin-top: 20px;
-  width: 80%;
+  /* width: 80%; */
+  /* width: 100px; */
   height: 50px;
 }
 

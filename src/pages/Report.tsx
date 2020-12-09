@@ -27,7 +27,7 @@ const Report: React.FC = (props: any) => {
 
     setTimeout(() => {
       setShowDoneMsg(false);
-      props.history.push("/scan");
+      props.history.replace("/scan");
     }, 2000);
   };
 

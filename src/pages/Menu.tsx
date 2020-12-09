@@ -14,9 +14,10 @@ import {
 } from "@ionic/react";
 import "./Menu.css";
 import { barcodeOutline, layersOutline, personCircleOutline } from "ionicons/icons";
+import { AppContext } from "../App";
 
 const Menu: React.FC = () => {
-
+  const { state, dispatch } = useContext(AppContext);
   return (
     <IonPage>
       <IonHeader>
@@ -30,7 +31,7 @@ const Menu: React.FC = () => {
         <div className="wrapper padder">
           <IonTitle>Welcome Scanner!</IonTitle>
           <IonText>Vendor id ---</IonText>
-          <IonImg className="logo-img ion-margin-top" src="assets/barcode-scan.webp" />
+          <IonImg className="logo-img ion-margin-top" src="assets/barcode-menu.png" />
           <IonButton
             className="scan-button"
             routerLink="/scan"
