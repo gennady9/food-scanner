@@ -1,11 +1,8 @@
 {
     "appId": "gennady9.food.scanner",
     "appName": "Food scanner",
-    "bundledWebRuntime": true,
+    "bundledWebRuntime": false,
     "npmClient": "npm",
     "webDir": "build",
-    "server": {
-      "url": "http://localhost:8100"
-    },
     "cordova": {}
   }

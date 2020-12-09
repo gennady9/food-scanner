@@ -22,7 +22,7 @@ import { AppContext } from "../App";
 const Display: React.FC = (props : any) => {
   const { state, dispatch } = useContext(AppContext);
   let { name, category, ingredients, allergenOverview, productCodes } = state.productDetails;
-  console.log(productCodes);
+  // console.log(ingredients);
   let barcodeType = productCodes[0].type;
   const tempImage = ''; //"assets/placeholder.png";
   const barcodeNumber = props.match.params.id;
